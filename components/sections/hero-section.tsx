@@ -35,20 +35,22 @@ export function HeroSection() {
             className="text-center lg:text-left"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-600">
-                NeuroFlo
+              <span className="text-foreground">
+                We Aren&apos;t Automating Medical Coding.
               </span>
               <br />
-              <span className="text-foreground">
-                Operate With Intelligence!
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-600">
+                We&apos;re Engineering Surgical Revenue From the Ground Up.
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-             Under the hood, NeuroFlo runs a coordinated stack of specialized agents. A parsing agent structures the note, coding agents propose CPT, ICD-10, and HCPCS, validators apply payer and NCCI rules, and an evidence graph links every decision to the exact sentence, guideline, and user action for full traceability.
+              NeuroFlo runs natively inside Epic and Cerner as a SMART on FHIR application —
+              one system for surgical documentation, medical coding, and operational
+              intelligence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700">
-                <Link href="/contact">Request Demo</Link>
+                <Link href="/contact">Request a Pilot</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/investors">Investor Information</Link>
@@ -62,49 +64,53 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <GlassmorphismCard 
-              intensity="medium" 
+            <GlassmorphismCard
+              intensity="medium"
               glowAccent={true}
               className="relative z-10 p-8 md:p-10"
             >
               <div className="absolute opacity-30 top-0 right-0 w-40 h-40 bg-blue-600/30 rounded-full filter blur-xl"></div>
               <div className="absolute opacity-30  bottom-0 left-0 w-60 h-60 bg-cyan-600/30 rounded-full filter blur-xl"></div>
-              
-              <h3 className="text-2xl font-bold mb-6">Agentic Intelligence</h3>
+
+              <h3 className="text-2xl font-bold mb-6">What You Should Know First</h3>
               <p className="text-muted-foreground mb-6">
-                Unlike conventional AI, NeuroFlo deploys specialized agents that work together, each with custom tools and models to solve complex operational challenges.
+                Four things that separate NeuroFlo from a generic AI scribe or a coding bolt-on.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
-                  <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><line x1="12" y1="22" x2="12" y2="12"></line></svg>
-                  </div>
-                  <span className="text-sm font-medium">Op-Notes & AI Assistant</span>
-                </div>
-                
-                <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
-                  <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-500"><path d="M2 15V9c0-1 1-2 2-2h16c1 0 2 1 2 2v6c0 1-1 2-2 2h-4l-5 4v-4H4c-1 0-2-1-2-2Z"></path></svg>
-                  </div>
-                  <span className="text-sm font-medium">Coding & Validation</span>
-                </div>
-                
-                <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-background/50 border border-border/40">
                   <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                   </div>
-                  <span className="text-sm font-medium">EHR integration & Compliance</span>
+                  <span className="text-sm font-medium mb-1">SOC 2 Type II</span>
+                  <span className="text-xs text-muted-foreground">Audit underway, alongside existing HIPAA controls</span>
                 </div>
-                
-                <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
+
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-background/50 border border-border/40">
                   <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-500"><path d="M21.9 8c-2.2-4.8-6.3-7-9.9-7-3.6 0-7.7 2.2-9.9 7-2 4.8-2 9.2 0 14 2.2 4.8 6.3 7 9.9 7 3.6 0 7.7-2.2 9.9-7 2-4.8 2-9.2 0-14Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-500"><path d="M2 20h20"></path><path d="M5 20V8.2c0-.4.3-.8.7-.9l.2-.1c.4 0 .8.2 1 .5l1.8 2.6c.3.4.9.4 1.2 0l1.8-2.6c.3-.4.5-.6 1-.5.1 0 .2 0 .3.1.4.1.7.5.7.9V20"></path><path d="M13 14h6a2 2 0 0 1 2 2v4"></path><path d="M8 17H5"></path></svg>
                   </div>
-                  <span className="text-sm font-medium">Insights & Automation</span>
+                  <span className="text-sm font-medium mb-1">Government Contractor</span>
+                  <span className="text-xs text-muted-foreground">SAM.gov registered, Air Force veteran-owned — built for federal contracting</span>
+                </div>
+
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-background/50 border border-border/40">
+                  <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><line x1="12" y1="22" x2="12" y2="12"></line></svg>
+                  </div>
+                  <span className="text-sm font-medium mb-1">SMART on FHIR Native</span>
+                  <span className="text-xs text-muted-foreground">Runs inside Epic and Cerner — no rip-and-replace</span>
+                </div>
+
+                <div className="flex flex-col items-center text-center p-4 rounded-lg bg-background/50 border border-border/40">
+                  <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-500"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                  </div>
+                  <span className="text-sm font-medium mb-1">Built for Surgery</span>
+                  <span className="text-xs text-muted-foreground">While generalist scribes chase primary care, our wheelhouse is the OR</span>
                 </div>
               </div>
-              
+
               <div className="flex justify-center">
                 <Button asChild variant="ghost" className="text-blue-400 hover:text-blue-300 hover:bg-blue-900/20">
                   <Link href="/about">Learn more about our technology →</Link>

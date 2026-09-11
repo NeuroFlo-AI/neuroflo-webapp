@@ -42,8 +42,24 @@ export function SectionTwo() {
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-background via-background/95 to-background/90"></div>
       
       <div className="container px-4 mx-auto relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-sm font-medium text-blue-500 mb-3">Not an AI scribe</p>
+            <h2 className="text-3xl font-bold mb-4">See the platform, not just a transcript</h2>
+            <p className="text-muted-foreground">
+              Scribes passively transcribe what they hear. NeuroFlo actively checks the surgical
+              record against clinical, legal, and billing requirements before it&apos;s signed —
+              here&apos;s what that looks like across the app.
+            </p>
+          </motion.div>
+        </div>
+
         <div className="flex justify-center items-center">
-          
+
           {/* Centered GIF Slider */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}

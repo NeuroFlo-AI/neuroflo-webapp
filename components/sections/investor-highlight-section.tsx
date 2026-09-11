@@ -26,9 +26,9 @@ export function InvestorHighlightSection() {
             >
               <h2 className="text-3xl font-bold mb-6">Why NeuroFlo</h2>
               <p className="text-xl text-muted-foreground mb-8">
-                NeuroFlo is a healthcare AI platform that turns operative notes into codes, claims, and research-grade insights on a HIPAA and SOC 2 foundation.
+                NeuroFlo is a healthcare AI platform that turns operative notes into codes, claims, and live operational insight — with HIPAA controls today and SOC 2 Type II underway.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
@@ -36,12 +36,12 @@ export function InvestorHighlightSection() {
                   </div>
                   <p className="text-muted-foreground">Op-Notes to Claims: CPT, ICD-10, and HCPCS with evidence, payer and NCCI checks, and one-screen validation.</p>
                 </div>
-                
+
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m5 12 5 5L20 7"></path></svg>
                   </div>
-                  <p className="text-muted-foreground">Proven accuracy: 95%+ in pilots with sentence-level citations and 90% claim acceptance on test sets.</p>
+                  <p className="text-muted-foreground">98%+ coding accuracy measured in active pilot deployment, with sentence-level evidence for every code.</p>
                 </div>
                 
                 <div className="flex items-start gap-3">
@@ -75,30 +75,34 @@ export function InvestorHighlightSection() {
               glowAccent={true}
               className="p-8"
             >
-              <h3 className="text-2xl font-bold mb-6">We're Raising $3M</h3>
+              <h3 className="text-2xl font-bold mb-6">We&apos;re Raising $1M</h3>
               <p className="text-muted-foreground mb-8">
-                Funds will scale Op-Notes → Claims, validation, and insights across hospitals and ASCs, expand Oracle Cerner integrations, and accelerate go-to-market.
+                A post-money SAFE funding four quarters of growth: our first enterprise sales
+                hire, two AI engineers, SOC 2 Type II certification, and support for additional
+                hospital pilots.
               </p>
-              
+
               <div className="space-y-6 mb-8">
                 <div>
                   <h4 className="text-lg font-medium mb-2">Market Size</h4>
                   <p className="text-muted-foreground">
-                    TAM: $10B+ across healthcare AI for coding, RCM, and analytics as outlined in our deck.
+                    $20.8B medical coding market in 2026, growing to $30.4B by 2030 at a 10% CAGR (The Business Research Company).
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="text-lg font-medium mb-2">Team</h4>
                   <p className="text-muted-foreground">
                     AI and healthcare engineers with 20+ years combined experience in secure, mission-critical systems and EHR integrations.
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="text-lg font-medium mb-2">Traction</h4>
                   <p className="text-muted-foreground">
-                    Pilot at a Maryland University Medical Center-affiliated surgical center; active work with Vandalia Health at $10K per month; 95%+ coding accuracy with sentence-level evidence.
+                    Active pilot with Vandalia Health, with 98%+ coding accuracy measured in
+                    deployment, and a growing pipeline of additional health systems evaluating
+                    NeuroFlo under NDA.
                   </p>
                 </div>
               </div>

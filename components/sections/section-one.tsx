@@ -20,7 +20,7 @@ const SectionOne: React.FC = () => {
     // Prevent hydration mismatch
     if (!mounted) {
         return (
-            <section className='h-screen w-full overflow-hidden bg-background text-foreground relative'>
+            <section className='h-[78vh] min-h-[560px] w-full overflow-hidden bg-background text-foreground relative'>
                 <div className="flex h-full w-full items-center justify-center">
                     <div className="w-16 h-16" /> {/* Placeholder for logo */}
                 </div>
@@ -86,17 +86,15 @@ const SectionOne: React.FC = () => {
                     </div>
 
                     {/* Content with enhanced readability */}
-                    <h3 className='mb-4 bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-400 bg-clip-text text-3xl font-bold text-transparent drop-shadow-lg'>
-                   Operate With Intelligence in Healthcare & Government!
+                    <h3 className='mb-4 bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-400 bg-clip-text text-2xl md:text-3xl font-bold text-transparent drop-shadow-lg'>
+                        Turning Surgical Documentation Into Instant, Error-Free Revenue.
                     </h3>
 
-                    {/* <p className='mb-6 text-base text-white/90 dark:text-white/80 font-medium drop-shadow-md'>
-                        NeuroFlo connects voice, video & automation — instantly, securely. Come discover how NeuroFlo’s agent-based AI platform transforms video, voice, text, sensor, and edge data into structured, auditable intelligence—built for the speed, precision, and compliance demands of critical infrastructure.
-                    </p> */}
                     <p className='mb-6 text-base text-white/90 dark:text-white/80 font-medium drop-shadow-md'>
-                     NeuroFlo connects agentic AI across voice, video, and text to extract clinical insights for providers, generate clean claims for medical billing, and automate AI-based reporting,unifying documentation, coding, insights, and workflow automation all in one platform! Providers document once; scribe and coding agents infer CPT, ICD-10, and HCPCS with 98%+ accuracy, show sentence-level evidence, validate payer rules, and sync to major EHRs like Oracle Cerner. All of this runs on a unified HIPAA and SOC 2 compliant foundation with full audit trails and role-based access.
+                        We make surgeons faster, get hospitals paid within 24 hours instead of
+                        weeks, and turn dead text into live operational intelligence.
                     </p>
-                   
+
                     <div className='flex flex-wrap justify-center gap-6'>
                         <Link href='/about'>
                             <Button variant='default' className="bg-gradient-to-r from-blue-600/90 to-cyan-600/90 text-white hover:from-blue-700 hover:to-cyan-700 backdrop-blur-sm border border-white/20 shadow-lg">
@@ -105,7 +103,7 @@ const SectionOne: React.FC = () => {
                         </Link>
                         <Link href='/contact'>
                             <Button variant='secondary' className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm shadow-lg">
-                                Request a Demo
+                                Request a Pilot
                             </Button>
                         </Link>
                     </div>

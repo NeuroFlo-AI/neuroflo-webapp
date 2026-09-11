@@ -6,32 +6,22 @@ import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
 import { motion } from "@/lib/motion";
 const INDUSTRIES = [
   {
-    name: "Hospitals & Surgical Centers",
+    name: "Hospitals & Surgical Programs",
     description:
-      "Turn operative notes into clean claims and research-ready insights. Coding with evidence, payer validation, Oracle Cerner integration, and KPI dashboards.",
+      "Turn operative notes into clean claims and live operational insight. Coding with evidence, payer validation, Oracle Cerner integration, and KPI dashboards.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
         <path d="M3 22h18"></path><path d="M6 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path><path d="M9 10h6"></path><path d="M12 7v6"></path>
       </svg>
     ),
   },
-  // {
-  //   name: "Ambulatory Surgery Centers (ASCs)",
-  //   description:
-  //     "High-throughput documentation and coder review. CPT, ICD-10, and HCPCS suggestions with sentence-level citations and denial-prevention checks.",
-  //   icon: (
-  //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
-  //       <rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M2 20h20"></path><path d="M8 8h8"></path><path d="M8 12h6"></path>
-  //     </svg>
-  //   ),
-  // },
   {
-    name: "Academic Medicine & Research",
+    name: "Ambulatory Surgery Centers",
     description:
-      "Measurement-based KPIs from the same notes. Cohort filters, secure exports, and audit trails that support IRB processes without duplicate charting.",
+      "High-throughput documentation and coder review. CPT, ICD-10, and HCPCS suggestions with sentence-level citations and denial-prevention checks.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
-        <path d="M22 12l-10 7L2 12l10-7 10 7z"></path><path d="M6 15v4"></path><path d="M18 15v4"></path>
+        <rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M2 20h20"></path><path d="M8 8h8"></path><path d="M8 12h6"></path>
       </svg>
     ),
   },
@@ -48,7 +38,7 @@ const INDUSTRIES = [
   {
     name: "Government Healthcare (VA, DoD, Public Health)",
     description:
-      "Healthcare-focused deployments with HIPAA and SOC 2 controls, role-based access, and integration pathways to government EHRs and revenue systems.",
+      "SAM.gov registered and Air Force veteran-owned, with HIPAA controls, SOC 2 Type II underway, role-based access, and integration pathways to government EHRs and revenue systems.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
         <path d="M2 20h20"></path><path d="M5 20V8.2c0-.4.3-.8.7-.9l.2-.1c.4 0 .8.2 1 .5l1.8 2.6c.3.4.9.4 1.2 0l1.8-2.6c.3-.4.5-.6 1-.5.1 0 .2 0 .3.1.4.1.7.5.7.9V20"></path><path d="M13 14h6a2 2 0 0 1 2 2v4"></path><path d="M8 17H5"></path>

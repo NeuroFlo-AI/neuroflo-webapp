@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { SectionOne } from "@/components/sections/section-one";
 import { SectionTwo } from "@/components/sections/section-two";
+import { PillarsSection } from "@/components/sections/pillars-section";
 import { IndustriesSection } from "@/components/sections/industries-section";
 import { CapabilitiesSection } from "@/components/sections/capabilities-section";
 import { InvestorHighlightSection } from "@/components/sections/investor-highlight-section";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <SectionOne />
+      <PillarsSection />
       <SectionTwo />
       <HeroSection />
       <IndustriesSection />

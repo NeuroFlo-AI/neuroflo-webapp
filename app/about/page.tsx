@@ -12,7 +12,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">About NeuroFlo</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The Premier Agentic AI Platform for Mission-Critical Operations
+              Turning Surgical Documentation Into Instant, Error-Free Revenue
             </p>
           </div>
 
@@ -38,10 +38,11 @@ export default function AboutPage() {
                   customers to configure themselves—it's a bespoke, end-to-end
                   solution crafted by our expert team of AI engineers, PhD
                   researchers, expert UI/UX designers, and compliance
-                  specialists. We deliver custom-built, agentic AI experiences
-                  tailored to the unique challenges of regulated industries,
-                  ensuring seamless integration, unparalleled accuracy, and
-                  absolute trustworthiness.
+                  specialists. We deliver a custom-built platform, powered by
+                  critical AI, machine learning, and reinforcement learning
+                  working together, tailored to the unique challenges of
+                  regulated industries, ensuring seamless integration,
+                  unparalleled accuracy, and absolute trustworthiness.
                 </p>
               </GlassmorphismCard>
 
@@ -128,19 +129,18 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold mb-6">Core Technology</h2>
               <GlassmorphismCard intensity="medium" className="mb-8">
                 <h3 className="text-xl font-semibold mb-4">
-                  The Agentic Architecture
+                  Critical AI, Machine Learning, and Reinforcement Learning
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  At the heart of NeuroFlo lies its agentic architecture—a
-                  sophisticated network of intelligent, autonomous agents
-                  orchestrated by our expert team to tackle the most demanding
-                  operational challenges. These agents are not generic bots;
-                  they are purpose-built entities, each with specialized roles,
-                  tools, and memory, designed to operate collaboratively or
-                  independently.
+                  At the heart of NeuroFlo is a system trained specifically for
+                  the surgical revenue cycle — not one generalist model
+                  guessing across every code system, but proprietary models
+                  trained separately for CPT, ICD-10, HCPCS, and CMS, kept
+                  current through cohort and server systems as those code sets
+                  change.
                 </p>
                 <h4 className="font-medium mb-2">
-                  How the Agentic System Works
+                  How It Works
                 </h4>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start gap-3">
@@ -161,8 +161,9 @@ export default function AboutPage() {
                       </svg>
                     </div>
                     <p className="text-sm">
-                      Custom Agent Creation: Our team of AI experts defines and
-                      deploys agents based on client-specific use cases.
+                      Code-Specific Models: Separate models trained for CPT,
+                      ICD-10, HCPCS, and CMS, rather than one model guessing
+                      across all of them.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -183,8 +184,9 @@ export default function AboutPage() {
                       </svg>
                     </div>
                     <p className="text-sm">
-                      Contextual Intelligence: Agents infer context from
-                      multimodal inputs using real-time and historical data.
+                      Governed Requirements: Administrator policy, legal
+                      requirements, and surgeon and coder input come together
+                      to define groupings and modifiers over time.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -205,8 +207,9 @@ export default function AboutPage() {
                       </svg>
                     </div>
                     <p className="text-sm">
-                      Tool Integration: Each agent is equipped with custom tools
-                      ensuring precise task execution.
+                      Point-of-Care Validation: Every note is checked against
+                      clinical, legal, and billing requirements before it&apos;s
+                      signed, not after.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -227,8 +230,8 @@ export default function AboutPage() {
                       </svg>
                     </div>
                     <p className="text-sm">
-                      Collaboration: Agents operate as a team, handing off tasks
-                      seamlessly.
+                      Human-in-the-Loop: Every degradation is visible to the
+                      user — the system asks rather than silently guesses.
                     </p>
                   </li>
                   <li className="flex items-start gap-3">
@@ -249,8 +252,8 @@ export default function AboutPage() {
                       </svg>
                     </div>
                     <p className="text-sm">
-                      Adaptability: Through fine-tuned large language models and
-                      reinforcement learning with human feedback.
+                      Adaptability: Through reinforcement learning with human
+                      feedback from the surgeons and coders using it daily.
                     </p>
                   </li>
                 </ul>
@@ -259,12 +262,11 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 <GlassmorphismCard intensity="low">
                   <h3 className="text-xl font-semibold mb-4">
-                    Multimodal Capabilities
+                    Human-in-the-Loop by Design
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    NeuroFlo turns the data that exists in care delivery into
-                    structured, verifiable intelligence teams can use
-                    immediately.
+                    NeuroFlo is built as a companion to the people already
+                    doing the work, not a replacement for them.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-3">
@@ -331,9 +333,9 @@ export default function AboutPage() {
                         </svg>
                       </div>
                       <p className="text-sm">
-                        <strong>Video & Devices (optional):</strong> OR cameras
-                        and edge inputs for assistants, checklists, and event
-                        markers that enrich post-op analytics.
+                        <strong>Coder Confirmation:</strong> Coders review and
+                        confirm every suggested code against its evidence, not
+                        rubber-stamp a black box.
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
@@ -412,9 +414,10 @@ export default function AboutPage() {
                         </svg>
                       </div>
                       <p className="text-sm">
-                        <strong>SOC 2:</strong> Security controls, change
-                        management, access reviews, logging, and continuous
-                        monitoring.
+                        <strong>SOC 2 Type II — Audit Underway:</strong>{" "}
+                        Security controls, change management, access reviews,
+                        logging, and continuous monitoring, with certification
+                        actively in progress.
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
@@ -458,9 +461,10 @@ export default function AboutPage() {
                         </svg>
                       </div>
                       <p className="text-sm">
-                        <strong>Government Healthcare:</strong> Support for CJIS
-                        and FedRAMP-aligned practices when deployments extend to
-                        public sector environments.
+                        <strong>Government Healthcare:</strong> SAM.gov
+                        registered, Air Force veteran-owned, with support for
+                        CJIS and FedRAMP-aligned practices when deployments
+                        extend to public sector environments.
                       </p>
                     </li>
                   </ul>

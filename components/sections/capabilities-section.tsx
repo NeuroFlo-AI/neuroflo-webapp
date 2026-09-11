@@ -8,218 +8,241 @@ import { motion } from "@/lib/motion";
 
 const CAPABILITIES = [
   {
-    id: "agentic",
-    name: "Agentic Architecture",
-    description: "NeuroFlo's agentic architecture deploys intelligent, autonomous agents with specialized roles, tools, and memory that operate collaboratively or independently to tackle the most demanding operational challenges.",
+    id: "validation",
+    name: "Point-of-Care Validation",
+    tabLabel: "Validation",
+    description: "NeuroFlo checks the operative note against clinical, legal, and billing requirements before it's ever signed — catching missing details while the surgeon can still act on them, not weeks later in a denial.",
     features: [
-      "Custom agent creation by AI experts",
-      "Contextual intelligence from multimodal inputs",
-      "Tool integration with specialized models",
-      "Agent collaboration for complex workflows",
-      "Adaptability through fine-tuned LLMs"
+      "Real-time gap detection before sign-off",
+      "Multi-layer validation: provider profile, administrative, legal, and template rules",
+      "SMART on FHIR sync with Epic and Cerner",
+      "Full evidence trail back to the original note"
     ],
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M7 7h.01"></path><path d="M17 7h.01"></path><path d="M7 17h.01"></path><path d="M17 17h.01"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m9 12 2 2 4-4"></path><path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.7 9c-1.1.6-1.7 1.8-1.7 3s.6 2.4 1.7 3A3.6 3.6 0 0 0 9 19.3c.6 1.1 1.8 1.7 3 1.7s2.4-.6 3-1.7A3.6 3.6 0 0 0 19.3 15c1.1-.6 1.7-1.8 1.7-3s-.6-2.4-1.7-3A3.6 3.6 0 0 0 15 4.7c-.6-1.1-1.8-1.7-3-1.7Z"></path></svg>
     )
   },
   {
-    id: "multimodal",
-    name: "Multimodal Processing",
-    description: "Process and act on multiple data modalities in real time with NeuroFlo's advanced voice, video, and text processing capabilities, delivering a unified intelligence layer for any scenario.",
+    id: "coding-intelligence",
+    name: "Code-Specific Intelligence",
+    tabLabel: "Code Intelligence",
+    description: "Proprietary models trained separately for CPT, ICD-10, HCPCS, and CMS — not one generalist model guessing across all of them.",
     features: [
-      "Real-time video analysis with computer vision",
-      "Voice transcription and conversational memory",
-      "Document processing and form automation",
-      "Knowledge base integration with RAG",
-      "Edge and cloud hybrid processing"
+      "Models trained per code system, kept current as code sets change",
+      "Cohort and server systems with up-to-date rules for each",
+      "Sentence-level evidence for every suggested code",
+      "Payer and NCCI rule validation before submission"
     ],
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M21.9 8c-2.2-4.8-6.3-7-9.9-7-3.6 0-7.7 2.2-9.9 7-2 4.8-2 9.2 0 14 2.2 4.8 6.3 7 9.9 7 3.6 0 7.7-2.2 9.9-7 2-4.8 2-9.2 0-14Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><rect x="3" y="3" width="18" height="14" rx="2"></rect><path d="M7 21h10"></path><path d="M9 17v4"></path><path d="M15 17v4"></path></svg>
     )
   },
   {
-    id: "compliance",
-    name: "Compliance-First Design",
-    description: "NeuroFlo is engineered with compliance as its foundation, making it the go-to solution for government contracting and regulated industries with strict security and privacy requirements.",
+    id: "governance",
+    name: "Human-in-the-Loop Governance",
+    tabLabel: "Human-in-the-Loop",
+    description: "Administrators set the policy, legal sets the guardrails, and surgeons and coders shape it in practice — NeuroFlo doesn't override any of them silently.",
     features: [
-      "HIPAA, CJIS, and FedRAMP compliance",
-      "Comprehensive audit trails for transparency",
-      "Role-based access control",
-      "Explainable AI for regulatory audits",
-      "Data sovereignty and privacy protection"
+      "HIPAA controls with SOC 2 Type II underway",
+      "Full audit trail: every edit, decision, and override logged",
+      "Role-based access and data residency options",
+      "Every degradation visible — never a silent guess"
     ],
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
     )
   },
   {
-    id: "reporting",
-    name: "Agentic Reporting",
-    description: "NeuroFlo's hierarchical, agent-driven reporting system delivers unparalleled accuracy and scalability, tailored to the exacting demands of regulated sectors.",
+    id: "insights",
+    name: "Live Operational Insight",
+    tabLabel: "Live Insights",
+    description: "Ask a plain-language question and get an answer sourced from every operative note, not a static report someone built last quarter.",
     features: [
-      "Specialized data agents for analysis",
-      "Master reporting agents for synthesis",
-      "Multi-report agents for high-level insights",
-      "Client-defined reporting scope",
-      "AI-driven visualizations and compliance validation"
+      "No-code, drag-and-drop, and dictation query interface",
+      "Live dashboards built from unstructured note text",
+      "Outcomes, complications, LOS, and readmission tracking",
+      "Cohort filters and secure exports for research"
     ],
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="9" x2="9" y1="21" y2="9"></line></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
     )
   }
 ];
 
-// Floating neural particle component
-const FloatingParticle = ({ delay, duration, size, x, y, color }: { 
-  delay: number; 
-  duration: number; 
-  size: number; 
-  x: number; 
-  y: number;
-  color: string;
-}) => (
-  <div
-    className="absolute rounded-full blur-[0.5px]"
-    style={{
-      width: size,
-      height: size,
-      left: `${x}%`,
-      top: `${y}%`,
-      background: color,
-      animation: `float ${duration}s ease-in-out infinite`,
-      animationDelay: `${delay}s`,
-      opacity: 0,
-    }}
-  />
+// --- Four distinct, per-tab visuals. Everything below uses only static
+// Tailwind classes / literal keyframe values (no Math.* computed per render),
+// so nothing here can ever produce a server/client hydration mismatch. Each
+// one responds to hover (group-hover) so switching tabs isn't the only
+// interaction available.
+
+const VISUAL_SHELL = "relative order-1 md:order-2 aspect-square max-w-md mx-auto flex items-center justify-center group";
+
+// 1. Point-of-Care Validation: a note being scanned, checks landing as it passes.
+const ValidationVisual = () => (
+  <div className={VISUAL_SHELL}>
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[60px]"></div>
+    <div className="relative w-48 h-60 rounded-lg border-2 border-blue-500/30 bg-background/60 overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-colors group-hover:border-blue-400/60">
+      {/* note lines */}
+      <div className="p-5 space-y-3">
+        {[85, 70, 90, 60, 80, 50].map((w, i) => (
+          <div key={i} className="h-2 rounded bg-foreground/10" style={{ width: `${w}%` }} />
+        ))}
+      </div>
+      {/* scan beam */}
+      <div className="validation-scan absolute left-0 right-0 h-10 bg-gradient-to-b from-cyan-400/0 via-cyan-300/40 to-cyan-400/0" />
+      {/* checks that land as the beam passes */}
+      {[
+        { top: "18%" },
+        { top: "40%" },
+        { top: "62%" },
+        { top: "84%" },
+      ].map((pos, i) => (
+        <div
+          key={i}
+          className="validation-check absolute right-3 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shadow-[0_0_10px_rgba(37,99,235,0.6)]"
+          style={{ ...pos, animationDelay: `${i * 0.5 + 0.3}s` }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 5 5L20 7"></path></svg>
+        </div>
+      ))}
+    </div>
+    <style jsx>{`
+      @keyframes validation-scan-move {
+        0% { top: -10%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+      .validation-scan {
+        animation: validation-scan-move 2.6s ease-in-out infinite;
+      }
+      .group:hover .validation-scan {
+        animation-play-state: paused;
+      }
+      @keyframes validation-check-pop {
+        0%, 20% { transform: scale(0); opacity: 0; }
+        35%, 100% { transform: scale(1); opacity: 1; }
+      }
+      .validation-check {
+        animation: validation-check-pop 2.6s ease-out infinite;
+      }
+    `}</style>
+  </div>
 );
 
-// Animated atom visualization component
-const AnimatedAtom = () => {
-  // Random floating particles configuration
-  const floatingParticles = [
-    { delay: 0, duration: 4, size: 3, x: 20, y: 30, color: 'rgba(59, 130, 246, 0.4)' },    // blue
-    { delay: 1.5, duration: 5, size: 2, x: 75, y: 60, color: 'rgba(6, 182, 212, 0.4)' },   // cyan
-    { delay: 3, duration: 4.5, size: 2.5, x: 40, y: 80, color: 'rgba(59, 130, 246, 0.3)' }, // blue
-  ];
-
-  return (
-    <div className="relative order-1 md:order-2 aspect-square max-w-md mx-auto">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[50px]"></div>
-      
-      {/* Floating neural particles */}
-      {floatingParticles.map((particle, index) => (
-        <FloatingParticle key={`float-${index}`} {...particle} />
-      ))}
-      
-      {/* Electron shells container */}
+// 2. Code-Specific Intelligence: a neuron core with labeled bubbles orbiting it.
+const CODE_LABELS = ["CPT", "ICD-10", "HCPCS", "CMS"];
+const CodeIntelligenceVisual = () => (
+  <div className={VISUAL_SHELL}>
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[60px]"></div>
+    <div className="relative w-64 h-64">
+      {/* connecting spokes */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {/* Nucleus */}
-        <div className="absolute w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 animate-pulse">
-          <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-md"></div>
-          <div className="absolute inset-2 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 animate-[spin_8s_linear_infinite]"></div>
-        </div>
-
-        {/* Inner electron shell */}
-        <div className="absolute w-48 h-48 animate-[spin_12s_linear_infinite]">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={`inner-${i}`}
-              className="absolute w-3 h-3 rounded-full bg-blue-400/80 blur-[0.5px]"
-              style={{
-                left: `${50 + 40 * Math.cos((i * 2 * Math.PI) / 3)}%`,
-                top: `${50 + 40 * Math.sin((i * 2 * Math.PI) / 3)}%`,
-                animation: `orbit-1 ${8 + i}s linear infinite`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Middle electron shell */}
-        <div className="absolute w-64 h-64 animate-[spin_16s_linear_infinite_reverse]">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={`middle-${i}`}
-              className="absolute w-2 h-2 rounded-full bg-cyan-400/80 blur-[0.5px]"
-              style={{
-                left: `${50 + 45 * Math.cos((i * 2 * Math.PI) / 5)}%`,
-                top: `${50 + 45 * Math.sin((i * 2 * Math.PI) / 5)}%`,
-                animation: `orbit-2 ${12 + i * 0.5}s linear infinite`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Outer electron shell */}
-        <div className="absolute w-80 h-80 animate-[spin_20s_linear_infinite]">
-          {[...Array(7)].map((_, i) => (
-            <div
-              key={`outer-${i}`}
-              className="absolute w-2.5 h-2.5 rounded-full bg-blue-500/60 blur-[0.5px]"
-              style={{
-                left: `${50 + 48 * Math.cos((i * 2 * Math.PI) / 7)}%`,
-                top: `${50 + 48 * Math.sin((i * 2 * Math.PI) / 7)}%`,
-                animation: `orbit-3 ${16 + i * 0.3}s linear infinite`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Connection lines */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={`line-${i}`}
-              className="absolute w-[1px] h-1/2 bg-gradient-to-t from-blue-500/20 to-transparent origin-bottom"
-              style={{
-                left: '50%',
-                top: '50%',
-                transform: `rotate(${(i * 45)}deg)`,
-                animation: `glow ${3 + i * 0.2}s ease-in-out infinite`,
-              }}
-            />
-          ))}
-        </div>
+        <div className="w-full h-px bg-blue-500/20"></div>
+        <div className="absolute h-full w-px bg-blue-500/20"></div>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { 
-            opacity: 0;
-            transform: translate(0, 0) scale(1);
-          }
-          25% { 
-            opacity: 0.8;
-            transform: translate(10px, -10px) scale(1.1);
-          }
-          50% { 
-            opacity: 0.4;
-            transform: translate(-5px, 15px) scale(0.9);
-          }
-          75% { 
-            opacity: 0.6;
-            transform: translate(-15px, -5px) scale(1.05);
-          }
-        }
-        @keyframes orbit-1 {
-          from { transform: rotate(0deg) translateX(24px) rotate(0deg); }
-          to { transform: rotate(360deg) translateX(24px) rotate(-360deg); }
-        }
-        @keyframes orbit-2 {
-          from { transform: rotate(0deg) translateX(32px) rotate(0deg); }
-          to { transform: rotate(360deg) translateX(32px) rotate(-360deg); }
-        }
-        @keyframes orbit-3 {
-          from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
-          to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
-        }
-        @keyframes glow {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 0.5; }
-        }
-      `}</style>
+      {/* core */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 shadow-[0_0_40px_rgba(37,99,235,0.6)] animate-pulse z-10"></div>
+      {/* orbiting labeled bubbles */}
+      {CODE_LABELS.map((label, i) => (
+        <div
+          key={label}
+          className={`code-orbit code-orbit-${i} absolute inset-0 group-hover:[animation-play-state:paused]`}
+        >
+          <div className="code-counter-spin absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="px-3 py-1.5 rounded-full bg-background border border-blue-500/40 text-xs font-semibold text-blue-400 shadow-[0_0_12px_rgba(37,99,235,0.3)] transition-transform hover:scale-110 hover:border-cyan-400 whitespace-nowrap">
+              {label}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
-  );
+    <style jsx>{`
+      @keyframes code-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes code-counter-spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(-360deg); } }
+      .code-orbit-0 { animation: code-spin 14s linear infinite; }
+      .code-orbit-1 { animation: code-spin 14s linear infinite; animation-delay: -3.5s; }
+      .code-orbit-2 { animation: code-spin 14s linear infinite; animation-delay: -7s; }
+      .code-orbit-3 { animation: code-spin 14s linear infinite; animation-delay: -10.5s; }
+      .code-counter-spin { animation: code-counter-spin 14s linear infinite; animation-delay: inherit; }
+    `}</style>
+  </div>
+);
+
+// 3. Human-in-the-Loop: a review cycle — suggest, review, confirm, learn — orbiting a person icon.
+const LOOP_STEPS = [
+  { label: "Suggest", pos: "top-0 left-1/2 -translate-x-1/2" },
+  { label: "Review", pos: "top-1/2 right-0 -translate-y-1/2" },
+  { label: "Confirm", pos: "bottom-0 left-1/2 -translate-x-1/2" },
+  { label: "Learn", pos: "top-1/2 left-0 -translate-y-1/2" },
+];
+const HumanLoopVisual = () => (
+  <div className={VISUAL_SHELL}>
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[60px]"></div>
+    <div className="relative w-64 h-64 rounded-full border-2 border-dashed border-blue-500/30">
+      {/* traveling pulse riding the ring */}
+      <div className="loop-travel absolute inset-0 group-hover:[animation-play-state:paused]">
+        <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-cyan-300 shadow-[0_0_12px_4px_rgba(34,211,238,0.7)]"></div>
+      </div>
+      {/* step badges at cardinal points */}
+      {LOOP_STEPS.map((step) => (
+        <div key={step.label} className={`absolute ${step.pos}`}>
+          <div className="px-2.5 py-1 rounded-full bg-background border border-blue-500/40 text-[11px] font-medium text-blue-400 whitespace-nowrap transition-transform hover:scale-110 hover:border-cyan-400">
+            {step.label}
+          </div>
+        </div>
+      ))}
+      {/* center: the human */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
+    </div>
+    <style jsx>{`
+      @keyframes loop-travel-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .loop-travel { animation: loop-travel-spin 6s linear infinite; }
+    `}</style>
+  </div>
+);
+
+// 4. Live Operational Insight: a live-updating bar chart with a pulsing "live" badge.
+const BAR_HEIGHTS = [45, 75, 55, 90, 65, 80];
+const LiveInsightVisual = () => (
+  <div className={VISUAL_SHELL}>
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[60px]"></div>
+    <div className="relative w-64 h-48 rounded-lg border border-blue-500/30 bg-background/60 flex items-end justify-center gap-3 px-6 pb-6 pt-10 shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-colors group-hover:border-blue-400/60">
+      <div className="absolute top-3 right-3 flex items-center gap-1.5">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        <span className="text-[10px] font-medium tracking-wide text-cyan-400">LIVE</span>
+      </div>
+      {BAR_HEIGHTS.map((h, i) => (
+        <div
+          key={i}
+          className="live-bar w-6 rounded-t bg-gradient-to-t from-blue-600 to-cyan-400"
+          style={{ height: `${h}%`, animationDelay: `${i * 0.3}s` }}
+        />
+      ))}
+    </div>
+    <style jsx>{`
+      @keyframes live-bar-pulse {
+        0%, 100% { transform: scaleY(1); opacity: 0.85; }
+        50% { transform: scaleY(1.12); opacity: 1; }
+      }
+      .live-bar {
+        transform-origin: bottom;
+        animation: live-bar-pulse 2.2s ease-in-out infinite;
+      }
+    `}</style>
+  </div>
+);
+
+const VISUALS: Record<string, () => JSX.Element> = {
+  validation: ValidationVisual,
+  "coding-intelligence": CodeIntelligenceVisual,
+  governance: HumanLoopVisual,
+  insights: LiveInsightVisual,
 };
 
 export function CapabilitiesSection() {
@@ -230,7 +253,7 @@ export function CapabilitiesSection() {
     <section ref={ref} className="py-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-40 -right-32 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-[96px] opacity-10"></div>
-      
+
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <motion.div
@@ -238,62 +261,66 @@ export function CapabilitiesSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold mb-4">Core Capabilities</h2>
+            <h2 className="text-3xl font-bold mb-4">Built to Earn a Pilot</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              NeuroFlo's unique technology stack sets it apart in mission-critical AI solutions.
+              Critical AI, machine learning, and reinforcement learning working together —
+              not a chatbot wrapper, and not another generalist model guessing at your codes.
             </p>
           </motion.div>
         </div>
-        
-        <Tabs defaultValue="agentic" className="w-full">
-          <TabsList className="w-full max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 mb-10">
+
+        <Tabs defaultValue="validation" className="w-full">
+          <TabsList className="w-full max-w-4xl mx-auto h-auto flex flex-wrap justify-center gap-2 bg-transparent mb-10 p-0">
             {CAPABILITIES.map((capability) => (
-              <TabsTrigger 
+              <TabsTrigger
                 key={capability.id}
                 value={capability.id}
-                className="flex items-center gap-2 data-[state=active]:bg-primary/10"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-border/50 bg-background/40 data-[state=active]:bg-primary/10 data-[state=active]:border-blue-500/50"
               >
-                <span className="hidden md:inline-block">{capability.name}</span>
-                <span className="md:hidden">{capability.icon}</span>
+                <span className="hidden sm:inline-block text-sm">{capability.tabLabel}</span>
+                <span className="sm:hidden">{capability.icon}</span>
               </TabsTrigger>
             ))}
           </TabsList>
-          
-          {CAPABILITIES.map((capability) => (
-            <TabsContent key={capability.id} value={capability.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <GlassmorphismCard 
-                    intensity="medium" 
-                    glowAccent={true}
-                    className="order-2 md:order-1 md:p-8"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-4">
-                      {capability.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4">{capability.name}</h3>
-                    <p className="text-muted-foreground mb-6">
-                      {capability.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {capability.features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500 mt-1"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </GlassmorphismCard>
-                  
-                  <AnimatedAtom />
-                </div>
-              </motion.div>
-            </TabsContent>
-          ))}
+
+          {CAPABILITIES.map((capability) => {
+            const Visual = VISUALS[capability.id];
+            return (
+              <TabsContent key={capability.id} value={capability.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <GlassmorphismCard
+                      intensity="medium"
+                      glowAccent={true}
+                      className="order-2 md:order-1 md:p-8"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-4">
+                        {capability.icon}
+                      </div>
+                      <h3 className="text-2xl font-bold mb-4">{capability.name}</h3>
+                      <p className="text-muted-foreground mb-6">
+                        {capability.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {capability.features.map((feature, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500 mt-1"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </GlassmorphismCard>
+
+                    <Visual />
+                  </div>
+                </motion.div>
+              </TabsContent>
+            );
+          })}
         </Tabs>
       </div>
     </section>
