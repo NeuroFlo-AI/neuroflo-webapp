@@ -19,7 +19,7 @@ export default function OverviewPage() {
 
         <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/40 shadow-2xl">
           <iframe
-            src="/overview/neuroflo-opener-v1.html"
+            src="/overview/neuroflo-deck-v2.html"
             title="NeuroFlo Platform Overview"
             className="w-full aspect-video bg-black"
             loading="lazy"

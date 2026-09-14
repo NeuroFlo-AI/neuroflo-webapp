@@ -72,7 +72,7 @@ body.idle{cursor:none}
 .giant{font:300 212px/.9 var(--display);letter-spacing:-.052em;margin:0}
 .xl{font:300 112px/1.03 var(--display);letter-spacing:-.042em;margin:0}
 .xl.alt{color:var(--ice)}
-.xl2{font:300 90px/1.02 var(--display);letter-spacing:-.045em;margin:0 0 34px}
+.xl2{font:300 80px/1.03 var(--display);letter-spacing:-.045em;margin:0 0 34px}
 .l{font:300 84px/1.05 var(--display);letter-spacing:-.038em;margin:0}
 .m2{font:300 62px/1.08 var(--display);letter-spacing:-.032em;margin:0}
 .lede{font:400 32px/1.5 var(--body);color:var(--muted);margin:0;max-width:30em}
@@ -168,7 +168,7 @@ body.idle{cursor:none}
 .pcard .who{margin-top:24px;font-size:20px;color:var(--lav)}
 
 /* shot intro */
-.intro{position:absolute;left:140px;top:320px;width:600px}
+.intro{position:absolute;left:140px;top:50%;transform:translateY(-52%);width:570px}
 .intro .lede{font-size:30px}
 .phone{position:absolute;left:1520px;top:440px;width:250px;padding:10px;border-radius:40px;background:linear-gradient(160deg,#27305f,#070b24);
   box-shadow:0 0 0 1px rgba(190,210,255,.3),0 60px 120px rgba(0,6,60,.7),0 0 80px rgba(37,99,235,.35)}
@@ -293,6 +293,40 @@ body.idle{cursor:none}
 .tr b{font:400 27px/1.2 var(--display);color:#F4F7FF;letter-spacing:-.015em;display:block}
 .tr b span{display:block;font:200 20px var(--display);color:var(--ice);margin-bottom:6px}
 
+/* v2 additions */
+.hsub{font:400 29px/1.5 var(--body);color:#D6E1FF;max-width:1320px;margin:26px 0 0}
+.cardrow.c4 .card{min-height:320px;padding:40px 36px 44px}
+.cardrow.c4 .card h3{font-size:31px;margin-top:30px}
+.cardrow.c4 .card p{font-size:21px}
+.quote{margin:38px 0 0;padding:4px 0 4px 26px;border-left:3px solid var(--sky);font:300 26px/1.45 var(--display);color:var(--ice);letter-spacing:-.01em}
+.src{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font:500 15px/1 var(--body);color:var(--ice);text-decoration:none;padding:8px 13px;border-radius:999px;border:1px solid rgba(190,210,255,.28);background:rgba(10,20,80,.35);cursor:pointer;transition:background .3s,border-color .3s}
+.src:hover{background:rgba(40,90,255,.5);border-color:rgba(170,200,255,.6)}
+.src:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.src svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stat .src{margin:0 0 24px}
+.vp-eb{position:absolute;left:140px;top:110px}
+.vp-l{position:absolute;left:140px;top:180px;width:760px}
+.vp-r{position:absolute;left:980px;right:140px;top:180px}
+.vp-l .m2,.vp-r .m2{font-size:50px;margin-bottom:28px}
+.vsr{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center;padding:24px 32px;border-radius:24px;margin-bottom:18px}
+.vsr .num{font-size:70px}
+.vsr p{font:400 21px/1.45 var(--body);color:var(--muted);margin:0}
+.vsr .src{margin-top:12px}
+.mtag{display:inline-block;margin-top:10px;font:500 13px/1 var(--body);color:var(--lav);border:1px solid rgba(169,155,255,.45);border-radius:999px;padding:5px 10px}
+.vp-panel{border-radius:28px;padding:10px 40px}
+.vp-panel .items li{font-size:24px;padding:21px 0 21px 46px}
+.vp-panel .items li::before{top:33px}
+.mk{position:absolute;left:140px;right:140px;top:320px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.mk-p{padding:34px 44px 38px;border-radius:32px}
+.mk-i{padding:20px 0;border-top:1px solid rgba(190,210,255,.1)}
+.mk .lk+.mk-i{border-top:0}
+.mk .num{font-size:84px}
+.mk .mk-i p{font:400 21px/1.45 var(--body);color:var(--muted);margin:12px 0 0}
+.eq{font:400 24px var(--display);color:#E6EDFF;padding:6px 0 18px}
+.eq span{color:var(--lav);margin:0 12px}
+.eq b{font-weight:500;color:#fff}
+.acq{font:400 18px/1.5 var(--body);color:var(--muted);margin:14px 0 0}
+
 /* chrome */
 #ui{position:absolute;left:140px;right:140px;bottom:34px;height:30px;display:flex;justify-content:space-between;align-items:center;font:400 17px var(--body);color:rgba(214,226,255,.52);z-index:20;opacity:0;transition:opacity 1.6s}
 #ui .sec{display:flex;align-items:center;gap:14px}
@@ -389,165 +423,143 @@ const IC={
    type, tr (blur | halftone | fade), dir (lr | rl | radial), dur (ms autoplay hold),
    shot + shotState (framed | backdrop | deep), mood (open | blue | indigo | violet), dots (0–1 ambient halftone)
    ===================================================================== */
+const EXT='<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+const SRC={
+ hfma:{t:"HFMA, 2017",u:"https://www.hfma.org/revenue-cycle/charge-capture/55358/"},
+ ab:{t:"Advisory Board benchmark via MD Clarity",u:"https://www.mdclarity.com/blog/dnfb-in-healthcare"},
+ yale:{t:"Li et al., Yale University",u:"https://arxiv.org/pdf/2107.02975"},
+ tbrc:{t:"The Business Research Company, 2026",u:"https://www.researchandmarkets.com/reports/5752068/medical-coding-market-report"},
+ tbrcai:{t:"The Business Research Company, 2026",u:"https://www.thebusinessresearchcompany.com/report/artificial-intelligence-in-medical-coding-global-market-report"},
+ wd:{t:"Windsor Drake, Q1 2026",u:"https://windsordrake.com/market-intelligence/reports/ai-in-healthcare-valuations-q1-2026"},
+};
+const srcA=k=>`<a class="src" href="${SRC[k].u}" target="_blank" rel="noopener noreferrer">${SRC[k].t}${EXT}</a>`;
+
 const P1="AI Operative Note Suite", P2="Medical Coding &amp; RCM Hub", P3="Operational KPI Engine";
 const S=[
- {type:"logo",tr:"fade",dur:8500,mood:"open",dots:1,chrome:false},
+ /* 1 */ {type:"logo",tr:"fade",dur:8500,mood:"open",dots:1,chrome:false},
 
- {type:"statement",tr:"blur",dur:9500,mood:"open",dots:.55,section:"NeuroFlo",
-  lines:["We aren’t automating medical coding.","We’re engineering surgical revenue from the ground up."]},
-
- {type:"cards",tr:"blur",dur:13000,mood:"blue",dots:.22,section:"NeuroFlo",
-  title:"What you should know first.",
+ /* 2 */ {type:"cards",tr:"blur",dur:15000,mood:"blue",dots:.15,shot:"hero_dark",shotState:"backdrop",section:"Platform overview",
+  title:"Platform overview",
+  sub:"NeuroFlo is an end-to-end surgical revenue engineering platform for surgical documentation, medical coding and operational intelligence. It runs natively inside Epic and Cerner as a SMART on FHIR application.",
   cards:[
-   {icon:"gov",h:"Government contractor",p:"SAM.gov registered and veteran-owned. Ready for public sector, DoD and VHA contracting."},
+   {icon:"gov",h:"Government contractor",p:"SAM.gov registered and veteran-owned. Ready for DoD and VHA contracting."},
    {icon:"plug",h:"SMART on FHIR native",p:"Launches inside Epic and Cerner, uses only the case data it needs, and returns the note to the chart."},
-   {icon:"loop",h:"AI with reinforcement learning",p:"Learns from each surgeon’s prior notes and local coder edits, adapting to every institution."}]},
+   {icon:"loop",h:"Reinforcement learning",p:"Learns from each surgeon’s prior notes and local coder edits."},
+   {icon:"shield",h:"Not an AI scribe",p:"Scribes transcribe. NeuroFlo checks the record against clinical, legal and billing rules before sign-off."}]},
 
- {type:"scribe",tr:"halftone",dir:"radial",dur:10000,mood:"violet",dots:.7,section:"NeuroFlo",
-  big:"Not an AI scribe.",line:"Not in any shape or form.",
-  body:"Scribes passively transcribe what they hear. NeuroFlo actively checks the surgical record against clinical, legal and billing requirements before it’s signed."},
-
- {type:"section",tr:"blur",dur:5500,mood:"open",dots:.85,section:"Platform overview",text:"Platform overview"},
-
- {type:"paragraph",tr:"blur",dur:12500,mood:"blue",dots:.12,shot:"hero_dark",shotState:"backdrop",section:"Platform overview",
-  eyebrow:"Platform overview",title:"From the operating table to the revenue cycle, in one system.",
-  body:"NeuroFlo is an end-to-end surgical revenue engineering platform for surgical documentation, medical coding and operational intelligence. It runs natively inside Epic and Cerner as a SMART on FHIR application."},
-
- {type:"cards",tr:"blur",dur:12500,mood:"indigo",dots:.12,shot:"hero_dark",shotState:"deep",section:"Platform overview",
-  eyebrow:"Value proposition",title:"Turning surgical documentation into instant, error-free revenue.",
-  cards:[
-   {icon:"user",h:"Faster surgeons",p:"Operative notes in 5–10 minutes instead of 30–60."},
-   {icon:"send",h:"Paid within 24 hours",p:"Charge lag drops from a 7-day average to under a day."},
-   {icon:"chart",h:"Live operational insight",p:"Dead text in operative notes becomes real-time KPIs."}]},
-
- {type:"stats",tr:"halftone",dir:"lr",dur:13500,mood:"blue",dots:.18,section:"Platform overview",
+ /* 3 */ {type:"stats",tr:"halftone",dir:"lr",dur:15000,mood:"blue",dots:.18,section:"The problem",
   eyebrow:"The problem",title:"Millions are lost at the operative note.",
   stats:[
-   {n:"Up to 1%",p:"Of net charges lost to charge-capture leakage (HFMA, 2017)."},
-   {n:7.1,dec:1,suf:" days",p:"Median time charts sit discharged but not final billed (DNFB) before cash can move (Advisory Board benchmark, via MD Clarity)."},
-   {n:80,pre:"~",suf:"%",p:"Of clinical data trapped in unstructured text that EHR reporting can’t reach (Li et al., Yale)."}],
+   {n:"Up to 1%",sz:92,p:"Of net charges lost to charge-capture leakage: care delivered but never billed.",src:"hfma"},
+   {n:7.1,dec:1,suf:" days",p:"Median time charts sit discharged but not final billed (DNFB) before cash can move.",src:"ab"},
+   {n:80,pre:"~",suf:"%",p:"Of EHR data is unstructured text, including operative reports.",src:"yale"}],
   note:"Surgeons dictate from memory while fatigued. Coders then spend days deciphering the result."},
 
- {type:"versus",tr:"blur",dur:16000,mood:"indigo",dots:.12,section:"Platform overview",
+ /* 4 */ {type:"versus",tr:"blur",dur:16000,mood:"indigo",dots:.12,section:"Problem and solution",
   eyebrow:"Problem and solution",title:"Where revenue leaks, and how we close it.",
   rows:[
    {p:"Surgeons dictate from memory and miss critical billing details.",t:"Capture",s:"AI flags missing implants, anesthesia time blocks and more before sign-off."},
    {p:"Coders spend days deciphering notes, building backlogs and outsourcing costs.",t:"Convert",s:"The signed note becomes CPT, ICD-10 and HCPCS codes under the hospital’s own rules."},
    {p:"Surgical performance data is locked in text and manual chart audits.",t:"Capitalize",s:"Plain-English questions become live KPIs drawn from every operative note."}]},
 
- {type:"section",tr:"halftone",dir:"rl",dur:5500,mood:"open",dots:.85,section:"Three core pillars",text:"Three core pillars."},
-
- {type:"pillars",tr:"blur",dur:13000,mood:"blue",dots:.15,section:"Three core pillars",
-  title:"Capture. Convert. Capitalize.",
+ /* 5 */ {type:"pillars",tr:"halftone",dir:"rl",dur:14000,mood:"blue",dots:.15,section:"Three core pillars",
+  title:"Three core pillars",
+  sub:"We aren’t automating medical coding. We’re engineering surgical revenue from the ground up.",
   pillars:[
    {n:"01",v:"Capture",h:P1,p:"Real-time dictation and note capture that catches what’s missing before sign-off.",who:"Used by surgeons"},
    {n:"02",v:"Convert",h:P2,p:"Signed notes become submission-ready codes under the hospital’s own rules.",who:"Used by coders and revenue cycle"},
    {n:"03",v:"Capitalize",h:P3,p:"Plain-language questions become live dashboards from operative notes.",who:"Used by leadership, quality and surgeons"}]},
 
  /* ---- Pillar 01: Capture ---- */
- {type:"intro",tr:"halftone",dir:"lr",dur:9500,mood:"blue",dots:.1,shot:"op_template",shotState:"framed",phone:true,section:"Pillar 01",
-  n:"Pillar 01: Capture",h:P1,line:"Complete, compliant and fully billable, before the surgeon signs."},
- {type:"statement",tr:"blur",dur:10500,mood:"blue",dots:.1,shot:"op_template",shotState:"backdrop",section:P1,
-  lines:["We are not selling an AI scribe.","We are selling surgical capacity and revenue capture at the point of care."]},
- {type:"stats",tr:"blur",dur:14000,mood:"blue",dots:.08,shot:"op_template",shotState:"backdrop",section:P1,
-  eyebrow:P1,title:"Value delivered",
+ /* 6 */ {type:"intro",tr:"halftone",dir:"lr",dur:11000,mood:"blue",dots:.1,shot:"op_template",shotState:"framed",phone:true,section:"Pillar 01",
+  n:"Pillar 01: Capture",h:P1,line:"Complete, compliant and fully billable, before the surgeon signs.",
+  quote:"We are not selling an AI scribe. We are selling surgical capacity and revenue capture at the point of care."},
+ /* 7 */ {type:"vp",tr:"blur",dur:18000,mood:"blue",dots:.06,shot:"op_template",shotState:"backdrop",section:P1,pillar:P1,
   stats:[
-   {n:"5–10",suf:" min",p:"Per operative note, down from 30–60 minutes."},
-   {n:2500,suf:" hrs",p:"Surgical hours reclaimed a year: 30 minutes a day across 20 surgeons."},
-   {n:10,pre:"$",suf:"M",p:"In revenue capacity from those hours, about $2M net at a 20% margin."}],
-  note:"Charge leakage is stopped at the point of care, while the surgeon still remembers the case."},
- {type:"diagram",tr:"blur",dur:21000,mood:"blue",dots:.05,shot:"op_narrative",shotState:"deep",section:P1,
-  pillar:P1,title:"Operative note life cycle",flow:"op",cap:"Listen, structure, validate, complete, learn."},
- {type:"list",tr:"blur",dur:13500,mood:"blue",dots:.08,shot:"op_narrative",shotState:"backdrop",section:P1,
-  pillar:P1,title:"Problems solved",kind:"problems",
+   {n:"5–10",suf:" min",p:"Per operative note, down from 30–60 minutes.",m:true},
+   {n:2500,suf:" hrs",p:"Surgical hours reclaimed a year: 30 minutes a day across 20 surgeons.",m:true},
+   {n:10,pre:"$",suf:"M",p:"Revenue capacity from those hours, about $2M net at a 20% margin.",m:true}],
   items:["Missing anesthesia time blocks, implants, devices and secondary repairs",
          "Notes that miss subspecialty CPT, ICD-10-CM, CMS and HCPCS requirements",
          "Coders left working from an incomplete source document",
          "Passive transcription that records words but checks nothing",
          "Repetitive documentation work that drives surgeon burnout"]},
+ /* 8 */ {type:"diagram",tr:"blur",dur:21000,mood:"blue",dots:.05,shot:"op_narrative",shotState:"deep",section:P1,
+  pillar:P1,title:"Operative note life cycle",flow:"op",cap:"Listen, structure, validate, complete, learn."},
 
  /* ---- Pillar 02: Convert ---- */
- {type:"intro",tr:"halftone",dir:"rl",dur:9500,mood:"indigo",dots:.1,shot:"coding_hl",shotState:"framed",section:"Pillar 02",
-  n:"Pillar 02: Convert",h:P2,line:"Signed notes to submission-ready codes, each one traced to its evidence."},
- {type:"statement",tr:"blur",dur:10000,mood:"indigo",dots:.1,shot:"coding_hl",shotState:"backdrop",section:P2,
-  lines:["We are not selling automated medical coding.","We are selling instant liquidity and margin recovery."]},
- {type:"stats",tr:"blur",dur:14000,mood:"indigo",dots:.08,shot:"coding_hl",shotState:"backdrop",section:P2,
-  eyebrow:P2,title:"Value delivered",
+ /* 9 */ {type:"intro",tr:"halftone",dir:"rl",dur:11000,mood:"indigo",dots:.1,shot:"coding_hl",shotState:"framed",section:"Pillar 02",
+  n:"Pillar 02: Convert",h:P2,line:"Signed notes to submission-ready codes, each one traced to its evidence.",
+  quote:"We are not selling automated medical coding. We are selling instant liquidity and margin recovery."},
+ /* 10 */ {type:"vp",tr:"blur",dur:18000,mood:"indigo",dots:.06,shot:"coding_hl",shotState:"backdrop",section:P2,pillar:P2,
   stats:[
-   {n:"&lt;24",suf:" hrs",p:"Charge lag, down from a 7.1-day average."},
-   {n:30,pre:"$",suf:"M",p:"Working capital freed at $5M a day, plus $1.5M a year in capital cost."},
-   {n:1.39,dec:2,pre:"$",suf:"M",p:"Saved a year on denial rework and outsourced coding."}],
-  note:"Modeled for 95%+ first-pass accuracy, with coders verifying every code against its source."},
- {type:"diagram",tr:"blur",dur:19000,mood:"indigo",dots:.05,shot:"coding",shotState:"deep",section:P2,
-  pillar:P2,title:"Medical coding life cycle",flow:"code",cap:"Prepare, review, validate, trace evidence, enhance, confirm, charge."},
- {type:"evidence",tr:"blur",dur:17000,mood:"indigo",dots:.04,shot:"coding",shotState:"deep",section:P2,
-  pillar:P2,title:"Every code, traced to the words that earned it"},
- {type:"list",tr:"blur",dur:13500,mood:"indigo",dots:.08,shot:"coding",shotState:"backdrop",section:P2,
-  pillar:P2,title:"Problems solved",kind:"problems",
+   {n:"&lt;24",suf:" hrs",p:"Discharged-not-final-billed time, down from a 7.1-day median.",m:true},
+   {n:30,pre:"$",suf:"M",p:"Working capital freed at $5M a day, plus $1.5M a year in capital cost.",m:true},
+   {n:1.39,dec:2,pre:"$",suf:"M",p:"Saved a year on denial rework and outsourced coding.",m:true}],
   items:["A multi-day coding backlog that traps cash in DNFB",
          "Coders starting from disconnected, incomplete notes",
          "Generic logic that ignores the hospital’s modifiers, grouping and payer rules",
          "AI suggestions coders can’t verify against the note",
          "Costly dependence on outsourced coding agencies"]},
+ /* 11 */ {type:"evidence",tr:"blur",dur:17000,mood:"indigo",dots:.04,shot:"coding",shotState:"deep",section:P2,
+  pillar:P2,title:"Every code, traced to the words that earned it"},
+ /* 12 */ {type:"diagram",tr:"blur",dur:19000,mood:"indigo",dots:.05,shot:"coding",shotState:"deep",section:P2,
+  pillar:P2,title:"Medical coding life cycle",flow:"code",cap:"Prepare, review, validate, trace evidence, enhance, confirm, charge."},
 
  /* ---- Pillar 03: Capitalize ---- */
- {type:"intro",tr:"halftone",dir:"radial",dur:9500,mood:"violet",dots:.1,shot:"research",shotState:"framed",section:"Pillar 03",
-  n:"Pillar 03: Capitalize",h:P3,line:"Plain-language questions, answered live from every operative note."},
- {type:"statement",tr:"blur",dur:10000,mood:"violet",dots:.1,shot:"research",shotState:"backdrop",section:P3,
-  lines:["We are not selling a dashboard.","We are selling surgical data governance and strategic foresight."]},
- {type:"stats",tr:"blur",dur:14000,mood:"violet",dots:.08,shot:"research",shotState:"backdrop",section:P3,
-  eyebrow:P3,title:"Value delivered",
+ /* 13 */ {type:"intro",tr:"halftone",dir:"radial",dur:11000,mood:"violet",dots:.1,shot:"research",shotState:"framed",section:"Pillar 03",
+  n:"Pillar 03: Capitalize",h:P3,line:"Plain-language questions, answered live from every operative note.",
+  quote:"We are not selling a dashboard. We are selling surgical data governance and strategic foresight."},
+ /* 14 */ {type:"vp",tr:"blur",dur:18000,mood:"violet",dots:.06,shot:"research",shotState:"backdrop",section:P3,pillar:P3,
   stats:[
-   {n:80,pre:"~",suf:"%",p:"Of clinical data sits in unstructured text. NeuroFlo makes it measurable."},
-   {n:"No-code",sz:84,p:"KPIs built from a plain-language question, with no analytics project."},
-   {n:"Live",p:"Efficiency, duration, morbidity, outcomes, supply cost and profitability by subtype."}],
-  note:"New questions also run across historical notes, with no manual chart audit."},
- {type:"diagram",tr:"blur",dur:19000,mood:"violet",dots:.05,shot:"research",shotState:"deep",section:P3,
-  pillar:P3,title:"KPI insights life cycle",flow:"kpi",cap:"Query, extract, analyze, visualize, act, learn."},
- {type:"list",tr:"blur",dur:13500,mood:"violet",dots:.08,shot:"research",shotState:"backdrop",section:P3,
-  pillar:P3,title:"Problems solved",kind:"problems",
+   {n:80,pre:"~",suf:"%",p:"Of EHR data is unstructured text. NeuroFlo makes it measurable.",src:"yale"},
+   {n:"No-code",sz:58,p:"KPIs built from a plain-language question, with no analytics project."},
+   {n:"Live",sz:70,p:"Efficiency, duration, morbidity, outcomes, supply cost and profitability by subtype."}],
   items:["Surgical nuance buried in unstructured operative-note text",
          "Weeks of manual chart audits for every new question",
          "EHR reporting limited to drop-downs and checkboxes",
          "A custom analytics project for every new metric",
          "No view of outcomes or profitability by surgical subtype"]},
+ /* 15 */ {type:"diagram",tr:"blur",dur:19000,mood:"violet",dots:.05,shot:"research",shotState:"deep",section:P3,
+  pillar:P3,title:"KPI insights life cycle",flow:"kpi",cap:"Query, extract, analyze, visualize, act, learn."},
 
- /* ---- Market and competition ---- */
- {type:"stats",tr:"halftone",dir:"lr",dur:12500,mood:"indigo",dots:.2,section:"Market",
-  eyebrow:"Market",title:"A $20B market, moving to AI.",
-  stats:[
-   {n:20.8,dec:1,pre:"$",suf:"B",p:"Global medical coding market in 2026, projected past $30B by 2030 at a 10% compound annual growth rate."},
-   {n:3.56,dec:2,pre:"$",suf:"B",p:"AI medical coding segment in 2026, forecast to reach $6B by 2030 at a 14% compound annual growth rate."}]},
- {type:"landscape",tr:"blur",dur:15000,mood:"violet",dots:.12,section:"Competitive landscape",
+ /* ---- Competition, value, market ---- */
+ /* 16 */ {type:"landscape",tr:"halftone",dir:"lr",dur:15000,mood:"violet",dots:.12,section:"Competitive landscape",
   eyebrow:"Competitive landscape",title:"Two isolated silos. NeuroFlo connects them.",
   cols:[
    {k:"Front-end scribes",h:"Nuance DAX, Abridge",items:["Ambient listening built for primary care","Passive transcription with no CPT, HCPCS or facility billing checks"]},
    {k:"Operating room to revenue cycle",h:"NeuroFlo",nf:true,items:["Checks the note against subspecialty billing rules before sign-off","Carries that intelligence into human-in-the-loop coding and live analytics"]},
-   {k:"Back-end coders",h:"CodaMetrix, Fathom",items:["Code whatever was written: garbage in, garbage out","Lock in up to 1% revenue leakage and aim to replace coders"]}]},
-
- /* ---- Value drivers ---- */
- {type:"drivers",tr:"halftone",dir:"lr",dur:14000,mood:"open",dots:.15,shot:"rules",shotState:"deep",section:"Core value drivers",
+   {k:"Back-end coders",h:"CodaMetrix, Fathom",items:["Code whatever was written: garbage in, garbage out","Lock in revenue leakage and aim to replace coders"]}]},
+ /* 17 */ {type:"drivers",tr:"blur",dur:14000,mood:"open",dots:.15,shot:"rules",shotState:"deep",section:"Core value drivers",
   eyebrow:"Core value drivers",title:"Why hospitals buy NeuroFlo.",
   tiles:[
    {icon:"seal",h:"Zero revenue leakage",p:"If it isn’t documented, it can’t be billed. NeuroFlo captures it before sign-off."},
-   {icon:"send",h:"Faster cash",p:"Charge lag under 24 hours frees $30M in working capital at $5M a day."},
-   {icon:"shield",h:"Lower overhead",p:"95%+ first-pass clean claims and less outsourcing save $1.39M a year."},
-   {icon:"user",h:"More surgical capacity",p:"2,500 hours and $10M in revenue capacity, without new hires."}]},
- {type:"flywheel",tr:"blur",dur:13000,mood:"violet",dots:.2,section:"Core value drivers",
+   {icon:"send",h:"Faster cash",p:"DNFB under 24 hours frees an estimated $30M in working capital at $5M a day."},
+   {icon:"shield",h:"Lower overhead",p:"Fewer denial reworks and less outsourcing: an estimated $1.39M saved a year."},
+   {icon:"user",h:"More surgical capacity",p:"An estimated 2,500 hours and $10M in revenue capacity, without new hires."}]},
+ /* 18 */ {type:"flywheel",tr:"blur",dur:13000,mood:"violet",dots:.2,section:"Core value drivers",
   eyebrow:"Core value drivers",title:"One continuous intelligence loop.",
   body:"NeuroFlo structures information at inception. What the operative note captures flows into coding, then into clinical, operational and financial analytics, and every case sharpens the next.",
   nodes:["Complete operative notes","Clean, verified codes","Live surgical insight","Sharper surgeon profiles"]},
 
- {type:"table",tr:"blur",dur:17000,mood:"blue",dots:.08,section:"Summary",
+ /* hidden: set skip:false to restore */
+ {type:"table",skip:true,tr:"blur",dur:17000,mood:"blue",dots:.08,section:"Summary",
   eyebrow:"Summary",title:"NeuroFlo at a glance",
   cols:["Pillar","Used by","What it does","Problem removed","Value created"],
   rows:[
    ["01 Capture",P1,"Surgeons","Checks the note in real time against clinical, legal and billing requirements","Missing details and 30–60 minute notes","Complete notes in 5–10 minutes"],
-   ["02 Convert",P2,"Coders and revenue cycle","Turns signed notes into verified CPT, ICD-10 and HCPCS codes","Multi-day DNFB lag, denials and outsourcing","Under 24-hour charge lag"],
+   ["02 Convert",P2,"Coders and revenue cycle","Turns signed notes into verified CPT, ICD-10 and HCPCS codes","Multi-day DNFB, denials and outsourcing","Under 24-hour DNFB"],
    ["03 Capitalize",P3,"Leadership, quality and surgeons","Turns plain-language questions into live KPIs from operative notes","Data trapped in text; manual chart audits","Real-time surgical, operational and financial insight"]]},
 
- {type:"logo",tr:"halftone",dir:"radial",dur:12000,mood:"open",dots:1,chrome:false,foot:"neuroflo.io"},
+ /* 19 */ {type:"market",tr:"halftone",dir:"radial",dur:17000,mood:"indigo",dots:.2,section:"Market",
+  title:"A growing market, moving to AI.",
+  market:[
+   {n:20.8,dec:1,suf:"B",p:"Global medical coding market in 2026, projected to $30.4B by 2030 at a 10% compound annual growth rate.",src:"tbrc"},
+   {n:3.56,dec:2,suf:"B",p:"AI medical coding segment in 2026, projected to $6B by 2030 at a 14% compound annual growth rate.",src:"tbrcai"}]},
+
+ /* 20 */ {type:"logo",tr:"halftone",dir:"radial",dur:12000,mood:"open",dots:1,chrome:false,foot:"neuroflo.io"},
 ];
+for(let i=S.length-1;i>=0;i--) if(S[i].skip) S.splice(i,1);
 
 /* =====================================================================
    DIAGRAMS
@@ -633,20 +645,20 @@ function flow(F){
 const words=(t,d0,step=.07,cls="")=>t.split(" ").map((w,i)=>`<span class="w rv ${cls}" style="--d:${(d0+i*step).toFixed(2)}s">${w}</span>`).join(" ");
 function sine(len,amp,lam,ph){let d="";for(let x=0;x<=len;x+=12){const y=60+amp*Math.sin(x/lam*2*Math.PI+ph);d+=(x?"L":"M")+x+" "+y.toFixed(1)}return d}
 const WAVES=`<svg viewBox="0 0 1500 120"><path class="wv1" stroke="#22d3ee" stroke-opacity=".8" d="${sine(2400,16,400,0)}"/><path class="wv2" stroke="#3b82f6" stroke-opacity=".7" d="${sine(2400,28,400,1.3)}"/><path class="wv3" stroke="#67e8f9" stroke-opacity=".6" d="${sine(2400,10,400,2.4)}"/></svg>`;
-const head=(s,d0=.3)=>`<div class="head">${s.eyebrow?`<p class="eyebrow rv" style="--d:.15s">${s.eyebrow}</p>`:""}<h2 class="l">${words(s.title,d0,.06)}</h2></div>`;
+const head=(s,d0=.3)=>`<div class="head">${s.eyebrow?`<p class="eyebrow rv" style="--d:.15s">${s.eyebrow}</p>`:""}<h2 class="l">${words(s.title,d0,.06)}</h2>${s.sub?`<p class="hsub rv" style="--d:1s">${s.sub}</p>`:""}</div>`;
 
 const R={
  logo:s=>`<div class="logo-wrap"><img class="logo rv" style="--d:.5s" src="${IMG.logo}" alt="NeuroFlo"><div class="waves fade" style="--d:1.9s">${WAVES}</div><p class="tagline">${words("Operate with Intelligence.",2.6,.18)}</p>${s.foot?`<p class="site rv" style="--d:3.8s">${s.foot}</p>`:""}</div>`,
  statement:s=>`<div class="stmt"><h1 class="xl">${words(s.lines[0],.3,.09)}</h1><h1 class="xl alt">${words(s.lines[1],2.1,.1)}</h1></div>`,
- cards:s=>head(s)+`<div class="cardrow">${s.cards.map((c,i)=>`<article class="card glass rv" style="--d:${(1.3+i*.55).toFixed(2)}s"><span class="ic big">${IC[c.icon]}</span><h3>${c.h}</h3><p>${c.p}</p></article>`).join("")}</div>`,
+ cards:s=>head(s)+`<div class="cardrow${s.cards.length>3?" c4":""}" style="grid-template-columns:repeat(${s.cards.length},1fr)">${s.cards.map((c,i)=>`<article class="card glass rv" style="--d:${(1.3+i*.55).toFixed(2)}s"><span class="ic big">${IC[c.icon]}</span><h3>${c.h}</h3><p>${c.p}</p></article>`).join("")}</div>`,
  scribe:s=>`<div class="scribe"><h1 class="giant">${words(s.big,.3,.14)}</h1><p class="m rv" style="--d:1.6s">${s.line}</p><p class="lede rv" style="--d:2.8s">${s.body}</p></div>`,
  section:s=>`<div class="sect"><img class="mark rv" style="--d:.1s" src="${IMG.mark}" alt=""><h1 class="giant">${words(s.text,.3,.14)}</h1></div>`,
  paragraph:s=>`<div class="para"><p class="eyebrow rv" style="--d:.15s">${s.eyebrow}</p><h2 class="l">${words(s.title,.35,.06)}</h2><div class="para-body glass dark rv" style="--d:1.9s"><p>${s.body}</p></div></div>`,
- stats:s=>head(s)+`<div class="stats" style="grid-template-columns:repeat(${s.stats.length},1fr)">${s.stats.map((t,i)=>{const num=typeof t.n==="number"?`<span data-count="${t.n}" data-dec="${t.dec||0}" data-delay="${1.4+i*.6}">0</span>`:t.n;return `<div class="stat glass dark rv" style="--d:${(1.2+i*.6).toFixed(2)}s"><div class="num"${t.sz?` style="font-size:${t.sz}px"`:""}>${t.pre?`<small>${t.pre}</small>`:""}${num}${t.suf?`<small>${t.suf}</small>`:""}</div><p>${t.p}</p>${t.bar?`<div class="bar"><i style="--v:${t.bar}%;--d:${(1.7+i*.6).toFixed(2)}s"></i></div>`:""}</div>`}).join("")}</div>${s.note?`<p class="snote rv" style="--d:${(1.6+s.stats.length*.6).toFixed(2)}s">${s.note}</p>`:""}${s.foot?`<p class="foot rv" style="--d:3.6s">${s.foot}</p>`:""}`,
+ stats:s=>head(s)+`<div class="stats" style="grid-template-columns:repeat(${s.stats.length},1fr)">${s.stats.map((t,i)=>{const num=typeof t.n==="number"?`<span data-count="${t.n}" data-dec="${t.dec||0}" data-delay="${1.4+i*.6}">0</span>`:t.n;return `<div class="stat glass dark rv" style="--d:${(1.2+i*.6).toFixed(2)}s"><div class="num"${t.sz?` style="font-size:${t.sz}px"`:""}>${t.pre?`<small>${t.pre}</small>`:""}${num}${t.suf?`<small>${t.suf}</small>`:""}</div><p>${t.p}</p>${t.src?srcA(t.src):""}${t.bar?`<div class="bar"><i style="--v:${t.bar}%;--d:${(1.7+i*.6).toFixed(2)}s"></i></div>`:""}</div>`}).join("")}</div>${s.note?`<p class="snote rv" style="--d:${(1.6+s.stats.length*.6).toFixed(2)}s">${s.note}</p>`:""}${s.foot?`<p class="foot rv" style="--d:3.6s">${s.foot}</p>`:""}`,
  landscape:s=>head(s)+`<div class="land"><svg class="lwire" viewBox="0 0 1920 10" preserveAspectRatio="none"><defs><linearGradient id="lwg" x1="0" x2="1"><stop offset="0" stop-color="#60a5fa" stop-opacity="0"/><stop offset=".25" stop-color="#60a5fa"/><stop offset=".5" stop-color="#22d3ee"/><stop offset=".75" stop-color="#60a5fa"/><stop offset="1" stop-color="#60a5fa" stop-opacity="0"/></linearGradient></defs><path id="lwp" class="wire" pathLength="1" d="M0 5 H1920" stroke="url(#lwg)" style="--d:3.2s"/><circle class="pulse" r="5" style="--d:4.2s"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#lwp"/></animateMotion></circle></svg>${s.cols.map((c,i)=>`<article class="lcard glass ${c.nf?"nf":"dark"} rv" style="--d:${[1.3,2.7,1.9][i]}s">${c.nf?`<img src="${IMG.mark}" alt="">`:""}<p class="lk">${c.k}</p><h3>${c.h}</h3><ul>${c.items.map(x=>`<li>${x}</li>`).join("")}</ul></article>`).join("")}</div>`,
  versus:s=>head(s)+`<div class="vrows">${s.rows.map((r,i)=>{const d=1.3+i*1.5;return `<div class="vrow"><div class="vp rv" style="--d:${d.toFixed(2)}s"><span class="ring"></span><span>${r.p}</span></div><svg class="varrow" viewBox="0 0 170 40"><defs><linearGradient id="va${i}" x1="0" x2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><path class="wire" pathLength="1" d="M14 20 H150 M140 11 L152 20 L140 29" stroke="url(#va${i})" style="--d:${(d+.5).toFixed(2)}s"/></svg><div class="vs glass rv" style="--d:${(d+.8).toFixed(2)}s">${r.t?`<small class="vt">${r.t}</small>`:""}${r.s}</div></div>`}).join("")}</div>`,
  pillars:s=>head(s)+`<div class="prow"><svg class="pwire" viewBox="0 0 1920 10" preserveAspectRatio="none"><defs><linearGradient id="pwg" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".2" stop-color="#22d3ee"/><stop offset=".8" stop-color="#67e8f9"/><stop offset="1" stop-color="#67e8f9" stop-opacity="0"/></linearGradient></defs><path id="pwp" class="wire" pathLength="1" d="M0 5 H1920" stroke="url(#pwg)" style="--d:1s"/><circle class="pulse" r="5" style="--d:2.4s"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#pwp"/></animateMotion></circle></svg>${s.pillars.map((p,i)=>`<article class="pcard glass dark rv" style="--d:${(1.4+i*.6).toFixed(2)}s"><span class="pn">${p.n}</span><p class="pv">${p.v||""}</p><h3>${p.h}</h3><p>${p.p}</p><p class="who">${p.who}</p></article>`).join("")}</div>`,
- intro:s=>`<div class="intro"><p class="eyebrow rv" style="--d:.6s">${s.n}</p><h1 class="xl2">${words(s.h,.8,.12)}</h1><p class="lede rv" style="--d:1.9s">${s.line}</p></div>${s.phone?`<div class="phone rv" style="--d:2.6s"><img src="${IMG.mobile}" alt="NeuroFlo on mobile"></div>`:""}`,
+ intro:s=>`<div class="intro"><p class="eyebrow rv" style="--d:.6s">${s.n}</p><h1 class="xl2">${words(s.h,.8,.12)}</h1><p class="lede rv" style="--d:1.9s">${s.line}</p>${s.quote?`<blockquote class="quote rv" style="--d:2.9s">“${s.quote}”</blockquote>`:""}</div>${s.phone?`<div class="phone rv" style="--d:2.6s"><img src="${IMG.mobile}" alt="NeuroFlo on mobile"></div>`:""}`,
  list:s=>`<div class="lcol"><p class="eyebrow rv" style="--d:.2s">${s.pillar}</p><h2 class="l">${words(s.title,.4,.1)}</h2></div><div class="lpanel glass dark rv" style="--d:.9s"><ul class="items ${s.kind}">${s.items.map((t,i)=>`<li class="rv" style="--d:${(1.5+i*.55).toFixed(2)}s">${t}</li>`).join("")}</ul></div>`,
  diagram:s=>`<div class="dhead"><p class="eyebrow rv" style="--d:.15s">${s.pillar}</p><h2 class="m2">${words(s.title,.3,.07)}</h2><p class="cap rv" style="--d:.9s">${s.cap}</p></div><div class="flowwrap">${flow(FLOWS[s.flow])}</div>`,
  evidence:s=>`<div class="dhead"><p class="eyebrow rv" style="--d:.15s">${s.pillar}</p><h2 class="m2">${words(s.title,.3,.07)}</h2></div>
@@ -669,6 +681,9 @@ const R={
    ${[0,1,2].map(i=>`<circle class="pulse" r="6" style="--d:2.6s"><animateMotion dur="9s" begin="-${i*3}s" repeatCount="indefinite"><mpath href="#fwp"/></animateMotion></circle>`).join("")}</svg>
    ${s.nodes.map((t,i)=>`<div class="fwn glass rv" style="left:${pos[i][0]-135}px;top:${pos[i][1]-44}px;--d:${(1.6+i*.7).toFixed(2)}s">${t}</div>`).join("")}
    <div class="fw-core rv" style="--d:4.6s"><img src="${IMG.mark}" alt=""><p>NeuroFlo learns from every case</p></div></div>`},
+ vp:s=>{const row=(t,i)=>{const num=typeof t.n==="number"?`<span data-count="${t.n}" data-dec="${t.dec||0}" data-delay="${.8+i*.45}">0</span>`:t.n;return `<div class="vsr glass dark rv" style="--d:${(.7+i*.45).toFixed(2)}s"><div class="num"${t.sz?` style="font-size:${t.sz}px"`:""}>${t.pre?`<small>${t.pre}</small>`:""}${num}${t.suf?`<small>${t.suf}</small>`:""}</div><div><p>${t.p}</p>${t.m?'<span class="mtag">Modeled</span>':""}${t.src?srcA(t.src):""}</div></div>`};
+  return `<p class="eyebrow vp-eb rv" style="--d:.15s">${s.pillar}</p><div class="vp-l"><h2 class="m2">${words("Value delivered",.3,.1)}</h2>${s.stats.map(row).join("")}</div><div class="vp-r"><h2 class="m2">${words("Problems solved",2.3,.1)}</h2><div class="vp-panel glass dark rv" style="--d:2.6s"><ul class="items problems">${s.items.map((x,i)=>`<li class="rv" style="--d:${(3+i*.45).toFixed(2)}s">${x}</li>`).join("")}</ul></div></div>`},
+ market:s=>head(s)+`<div class="mk"><div class="mk-p glass dark rv" style="--d:1.1s;grid-column:1/-1;max-width:900px;margin:0 auto"><p class="lk">Market</p>${s.market.map((m,i)=>`<div class="mk-i"><div class="num"><small>$</small><span data-count="${m.n}" data-dec="${m.dec}" data-delay="${1.4+i*.5}">0</span><small>${m.suf}</small></div><p>${m.p}</p>${srcA(m.src)}</div>`).join("")}</div></div>`,
  table:s=>head(s)+`<div class="tbl glass dark rv" style="--d:1s"><div class="tr th">${s.cols.map(c=>`<div>${c}</div>`).join("")}</div>${s.rows.map((r,i)=>`<div class="tr rv" style="--d:${(1.8+i*.8).toFixed(2)}s"><b><span>${r[0]}</span>${r[1]}</b><div>${r[2]}</div><div>${r[3]}</div><div>${r[4]}</div><div>${r[5]}</div></div>`).join("")}</div>`,
 };
 
@@ -781,7 +796,7 @@ function wireEvidence(el){
   });
   requestAnimationFrame(()=>requestAnimationFrame(()=>made.forEach(p=>p.classList.add("go"))));
 }
-const HOOKS={stats:countUp,evidence:el=>{wireEvidence(el);document.fonts&&document.fonts.ready.then(()=>{if(el.classList.contains("on"))wireEvidence(el)})}};
+const HOOKS={stats:countUp,vp:countUp,market:countUp,evidence:el=>{wireEvidence(el);document.fonts&&document.fonts.ready.then(()=>{if(el.classList.contains("on"))wireEvidence(el)})}};
 
 /* navigation */
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
@@ -836,7 +851,7 @@ addEventListener("keydown",e=>{
     case "Home":go(0);break;case "End":go(S.length-1);break;
   }
 });
-stage.addEventListener("click",()=>{if(started)next()});
+stage.addEventListener("click",e=>{if(e.target.closest("a"))return;if(started)next()});
 let idleT;addEventListener("mousemove",()=>{document.body.classList.remove("idle");clearTimeout(idleT);idleT=setTimeout(()=>document.body.classList.add("idle"),2500)});
 
 /* deep link for review: #12 jumps straight to slide 12 */
